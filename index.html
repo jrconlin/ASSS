@@ -1,0 +1,95 @@
+<!doctype HTML>
+<html>
+    <head>
+<meta charset="utf-8">
+        <title>Adding Service as a Service</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <header>
+        <h1>Adding Service as a Service</h1>
+        <p>Services are awewsome! You need to add some today! We're here to help! Why am I shouting! Oh God! I think I'm stuck doing this!</p>
+        <p>Still, feel free to use this helpful page to find out how YOU can add Service to your Service!</p>
+        </header>
+        <article>
+        <p>So, with that in mind I present you two options:</p>
+        <p>The first is a cut and paste, bulletpointable service element you can include in a presentation TODAY!</p>
+        <p>The other requires thinking.</p>
+        <p>So, without further ado... embrace the blue pill!</p>
+<div id="pill">
+<img src="bluepill.png">
+        <div id="ass">{verb} {noun} {object} into our property by Q{n}</div>
+</div>
+        </article>
+    <footer>
+    <a href="https://github.com/jrconlin/ASSS">Fork me like you mean it, baby!</a>
+</footer>
+        <script>
+        things = {
+            "verb":["Integrate",
+            "Associate",
+            "Tie",
+            "Leverage",
+            "Develop",
+            "Access"],
+
+            "object":["functionality",
+            "API",
+            "feature set",
+            "paradigm",
+            "modularity",
+            "assets",
+            "dynamism",
+            "charisma",
+            "fresh scent"],
+
+            "noun":["Campaign-Manager",
+                "Firefox Faces",
+                "Firefox Finesse",
+                "Firefox Accounts",
+                "Firefox Flow",
+                "Firefox Friends",
+                "Heka",
+                "HR Reset Button",
+                "Identity",
+                "Key Exchange",
+                "Location",
+                "Mail",
+                "Marketplace",
+                "Metlog",
+                "Node Assignment",
+                "Notifications",
+                "Persona",
+                "Presence",
+                "Queuey",
+                "Sagrada",
+                "Sauropod",
+                "SimplePush",
+                "Sync",
+                "TBD",
+                "Where's my Fox"]
+            }
+
+            function picker(set) {
+                return set[Math.floor(Math.random() * set.length)];
+            }
+
+        ass = document.getElementById("ass");
+        r = /{([^}]+)}/g;
+    txt = ass.innerHTML;
+    rtxt = txt;
+    while (true) {
+        tag = r.exec(txt);
+        if (! tag) {
+            break;
+        }
+        if (tag[1] != "n") {
+            rtxt = rtxt.replace(tag[0], picker(things[tag[1]]));
+        } else {
+            rtxt = rtxt.replace(tag[0], Math.floor(Math.random() * 4) + 1);
+        }
+    }
+    ass.innerHTML = rtxt;
+        </script>
+    </body>
+</html>
